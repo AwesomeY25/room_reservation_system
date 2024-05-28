@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/css/bootstrap-timepicker.min.css">
+    <title>Room Reservation</title>
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Room Reservation</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <button id="openModalBtn" class="btn btn-primary">Add Reservation</button>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-- Main Table -->
+<div class="container mt-4 table-container">
+    <table class="table table-bordered table-striped" id="mainTable">
+        <thead class="thead-dark">
+            <tr>
+                <th>Reservation ID</th>
+                <th>Classroom Code</th>
+                <th>Course Code</th>
+                <th>Student Name</th>
+                <th>Student Contact</th>
+                <th>Timeslot</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+</div>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <div class="modal-content">
+        <span class="close" id="closeModalBtn">&times;</span>
+        <h2>Add your reservation</h2>
+        <form id="myForm">
+           
+            <!-- Classroom Code and Course Code-->
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="classroomCode">Classroom Code:</label>
+                    <input type="text" id="classroomCode" name="classroomCode" class="form-control" placeholder="Enter Classroom Code" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="courseCode">Course Code:</label>
+                    <input type="text" id="courseCode" name="courseCode" class="form-control" placeholder="Enter Course Code" required>
+                </div>
+            </div>
+
+            <!-- Student Name and Contact -->
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="studentName">Student Name:</label>
+                    <input type="text" id="studentName" name="studentName" class="form-control" placeholder="Enter Student Name" required>
+                    <div class="invalid-feedback">
+                        Please enter the student's name.
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="studentContact">Student Contact:</label>
+                    <input type="text" id="studentContact" name="studentContact" class="form-control" placeholder="Enter Student Contact" required>
+                </div>
+            </div>
+
+            <!-- Timeslot Range -->
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="startTime">Start Time:</label>
+                    <input type="datetime-local" id="startTime" name="startTime" class="form-control" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="endTime">End Time:</label>
+                    <input type="datetime-local" id="endTime" name="endTime" class="form-control" required>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+    </div>
+    
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+
+
+</body>
+</html>
